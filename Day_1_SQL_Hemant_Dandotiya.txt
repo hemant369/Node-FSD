@@ -1,0 +1,48 @@
+What is a foriegn key
+
+1. A foreign key is a field or a column that is used to establish a link between two tables.
+2. A foreign key in one table used to point primary key in another table.
+3. The foreign can contain duplicate and null values.
+4. A foreign key is created in CREATE TABLE or ALTER TABLE
+
+Properties:
+
+1. Parent records can be deleted if no child exists.
+2. Must reference PRIMARY KEY in the primary table.
+3. The foreign key column and constraint column should have matching data types.
+4. Records cannot be inserted in the child table if a corresponding record in the master table does not exist.
+5. Records of the master table cannot be deleted if corresponding records in the child table exist.
+
+Syntax:
+
+FOREIGN KEY (column_name) REFERENCES Referenced_Table_Name(referenced_column)
+
+Example:
+
+create database demo;
+
+use demo;
+
+CREATE TABLE Dept(
+	deptno  INT PRIMARY KEY,
+    dname   VARCHAR(100) NOT NULL,
+    loc    VARCHAR(100)
+);
+
+CREATE TABLE Emps
+(
+	empno INT PRIMARY KEY,
+	ename VARCHAR(100),
+	job   VARCHAR(100),
+	salary   INT,
+	deptno INT,
+    FOREIGN KEY (deptno) REFERENCES Dept(deptno)
+);
+
+INSERT INTO Dept VALUES(10, 'Accounts', 'Hyd');
+INSERT INTO Dept VALUES(20, 'Sales', 'Pune');
+
+INSERT INTO Emps VALUES(7369,'SMITH','CLERK',800, 20);
+INSERT INTO Emps VALUES(7499,'ALLEN','SALESMAN',1600,10);
+
+
