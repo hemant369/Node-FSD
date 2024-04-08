@@ -1,0 +1,218 @@
+-----------------------------------------------------Assignment 1---------------------------------------------------------
+
+
+Questions: What is regular expression in javascript
+Answer: A regular expression is a sequence of characters that forms a search pattern.
+When you search for data in a text, you can use this search pattern to describe what you are searching for.
+A regular expression can be a single character, or a more complicated pattern.
+Regular expressions can be used to perform all types of text search and text replace operations.
+Regular expressions can make your search much more powerful (case insensitive).
+
+_______________________________________________________________________________________________________________
+
+Questions: How to use regular expression in javascript
+Answer: We can use Regular expression in javascript by following way
+
+1. Using a regular expression literal:
+The regular expression consists of a pattern enclosed between slashes /. For example,
+cost regularExp = /abc/;
+Here, /abc/ is a regular expression.
+
+2. Using the RegExp() constructor function:
+You can also create a regular expression by calling the RegExp() constructor function. For example,
+const reguarExp = new RegExp('abc');
+
+For example:
+
+const regex = new RegExp(/^a...s$/);
+console.log(regex.test('alias')); // true
+
+Note: The string alias matches with the RegEx pattern /^a...s$/.
+Here, the test() method is used to check if the string matches the pattern.
+
+________________________________________________________________________________________________________________
+
+Questions: Go through the details of javascript array methods        
+Answer: 
+
+1. Map: The map() method creates a new array populated with the results of calling a provided function on every element in the calling array.
+It doesn't mutate the original array but returns a new one with the transformed elements.
+
+2. Find: The find() method returns the first element in the array that satisfies the provided testing function.
+If no elements pass the test, it returns undefined.
+
+3. FindIndex: The findIndex() method returns the index of the first element in the array that satisfies the provided testing function.
+If no elements pass the test, it returns -1.
+
+4. Filter: The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+It doesn't mutate the original array but returns a new one with the filtered elements.
+
+
+---------------------------------------------------Assignement 2-----------------------------------------------------------
+
+
+let arrpro = [{
+    id: 11,
+    pname: "Laptop",
+    price: 999,
+    qty: 10,
+    category: "Electronics"
+},
+{
+    id: 56,
+    pname: "Smartphone",
+    price: 599,
+    qty: 20,
+    category: "Electronics"
+},
+{
+    id: 34,
+    pname: "T-shirt",
+    price: 19.99,
+    qty: 50,
+    category: "Clothing"
+},
+{
+    id: 48,
+    pname: "Jeans",
+    price: 39.99,
+    qty: 30,
+    category: "Clothing"
+}];
+
+var flag = 0;
+
+// function display(productid) {
+//     for (var i = 0; i < arrpro.length; i++) {
+//         if (arrpro[i].id == productid) {
+//             flag++;
+//             console.log(arrpro[i].id);
+//             console.log(arrpro[i].pname);
+//             console.log(arrpro[i].price);
+//             console.log(arrpro[i].qty);
+//             console.log(arrpro[i].category);
+//         }
+//     }
+//     if(flag==0)
+//     console.log("Product Not Found");
+// }
+
+_______________________________________________________________________________________
+
+// function display(category) {
+//     for (var i = 0; i < arrpro.length; i++) {
+//         if (arrpro[i].category == category) {
+//             flag++;
+//             console.log(arrpro[i].pname);
+//             console.log(arrpro[i].price);
+//             console.log(arrpro[i].category);
+//         }
+//     }
+//     if(flag==0)
+//     console.log("Product Not Found based on category");
+// }
+// display("Electronics");
+
+__________________________________________________________________________________________
+
+// var newproduct = {id:45, panme:"engine", price:5400, qty:13,category:"Machine"};
+
+// arrpro.push(newproduct);
+
+// console.log(arrpro);
+
+_________________________________________________________________________________
+
+// function deleteProduct(productid){
+//     var index = arrpro.findIndex(product=>product.id==productid)
+
+//     if(index!=-1)
+//     {
+//         arrpro.splice(index,1);
+//         console.log("Product with Id",productid,"is deleted");
+//     }
+//     else
+//     {
+//         console.log("Product Id Not Found");
+//     }
+//     console.log(arrpro);
+// }
+
+// deleteProduct(34);
+
+________________________________________________________________________
+
+
+// function display(min, max) {
+//     for (var i = 0; i < arrpro.length; i++) {
+//         if (arrpro[i].price > min && arrpro[i].price < max) {
+//             flag++;
+//             console.log(arrpro[i].id);
+//             console.log(arrpro[i].pname);
+//             console.log(arrpro[i].price);
+//             console.log(arrpro[i].qty);
+//             console.log(arrpro[i].category);
+//             return;
+//         }
+//     }
+//     if (flag == 0)
+//         console.log("Product Not Found");
+// }
+
+// display(19.99,999);
+
+_______________________________________________________
+
+// function display() {
+//     for (var i = 0; i < arrpro.length; i++) {
+//         if (arrpro[i].qty == 0) {
+//             console.log(arrpro[i].id);
+//             console.log(arrpro[i].pname);
+//             console.log(arrpro[i].price);
+//             console.log(arrpro[i].qty);
+//             console.log(arrpro[i].category);
+//             return;
+//         }
+//     }
+//     console.log("No out of Stock Product Found");
+// }
+
+// display();
+
+___________________________________________________
+
+// arrpro.sort((a, b) => a.price - b.price);
+
+// console.log("Sorted array based on price:");
+// console.log(arrpro);
+
+------------------------------------------------Assignement 3-------------------------------------------------
+
+Question: How to extract only values from the object?
+Answer: We can extract only values from the object with the help of the map function
+
+var values = arrpro.map(product => Object.values(product));
+
+console.log("Extract values from objects:");
+console.log(values);
+
+The above code will extract only values from the array of products.
+
+______________________________________________________________________________________________
+
+Question: How to clone the object?
+Answer: We can clone object by the following ways
+
+1. Using the Spread Operator (...):
+var originalObject = { id: 1, name: "John" };
+var clonedObject = { ...originalObject };
+
+2. Using Object.assign():
+var originalObject = { id: 1, name: "John" };
+var clonedObject = Object.assign({}, originalObject);
+
+3. Using JSON.parse() and JSON.stringify():
+var originalObject = { id: 1, name: "John" };
+var clonedObject = JSON.parse(JSON.stringify(originalObject));
+
+
