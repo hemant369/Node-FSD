@@ -64,7 +64,7 @@ displayEntry();
 let flightDetails = new Map();
 
 flightDetails.set('AR456', { source: 'Hyderabad', destination: 'Bangalore', date: '05-09-2024', time: '18:00' });
-flightDetails.set('GF596', { source: 'Mumbai', destination: 'Delhi', date: '11-04-2024', time: '20:30' });
+flightDetails.set('GF596', { source: 'Pune', destination: 'Chennai', date: '11-04-2024', time: '20:30' });
 
 function flightStatus(flightNumber, currentTime) {
     if (flightDetails.has(flightNumber)) {
