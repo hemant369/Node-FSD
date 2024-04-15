@@ -1,0 +1,80 @@
+---------------------------------------------------------Assignment 1----------------------------------------------------------
+
+Question: What is the regular expressions to validate vehicle registration number (Eg:   TS10AB1234 )
+Answer: 
+
+var check = /^TS\d{2}[A-Z]{2}\d{4}$/;
+
+var number = "TS10AB1234";
+
+if (check.test(number)) {
+    console.log("Valid vehicle registration number");
+} else {
+    console.log("Invalid vehicle registration number");
+}
+
+_________________________________________________________________________________________________________________
+
+Question: What are data structure? Why do we need?
+Answer: A data structure is a collection of data values and the relationships between them.
+Data structures allow programs to store and process data effectively.
+There are many different data structures, each with its own advantages and disadvantages
+
+->Linear or Non-Linear
+This characteristic arranges the data in sequential order, such as arrays, graphs etc.
+
+->Static and Dynamic
+Static data structures have fixed formats and sizes along with memory locations. The static characteristic shows the compilation of the data.
+
+->Time Complexity
+The time factor should be very punctual. The running time or the execution time of a program should be limited. The running time should be as less as possible. The less the running time, the more accurate the device is.
+
+Need: 
+1. Data structure provides a way of organizing, managing, and storing data efficiently. With the help of data structure, the data items can be traversed easily. 
+2. Data structure provides efficiency, reusability and abstraction. 
+3. It plays an important role in enhancing the performance of a program because the main function of the program is to store and retrieve the user’s data as fast as possible.
+
+______________________________________________________________________________________________________________________
+
+Question: What are the applications of stack and queue in real-time applications?
+Answer: 
+
+Applications of Stacks:
+
+1. Function Call Stack: In programming languages, stacks are used to manage function calls. 
+When a function is called, its context (local variables, return address, etc.) is pushed onto the stack, and when the function returns, its context is popped off the stack.
+
+2. Backtracking Algorithms: Stacks are essential for implementing backtracking algorithms, such as depth-first search (DFS). In DFS, the stack is used to keep track of the path taken so far, allowing the algorithm to backtrack when necessary.
+
+3. Memory Management: Stacks are used for memory management in operating systems. For example, the call stack in a process keeps track of function calls and local variables, while the system stack stores data related to interrupts and exceptions.
+
+Applications of Queues:
+
+1. Job Scheduling: In real-time systems and operating systems, queues are used for job scheduling. Tasks or jobs are placed in a queue and executed in the order they were received, following the First-In-First-Out (FIFO) principle.
+
+2. Print Queue: Printers often use queues to manage print jobs. When multiple users send print requests simultaneously, the requests are placed in a print queue and processed one by one.
+
+3. Buffering: Queues are commonly used for buffering in networking and I/O operations. For example, in network routers, packets are placed in queues before being forwarded to their destination, helping to manage traffic flow and prevent congestion.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
