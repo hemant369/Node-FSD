@@ -1,0 +1,30 @@
+Question: What is Testing in Software Development? Why do we do testing?
+Answer: Software testing can be stated as the process of verifying and validating whether a software or application is bug-free, meets the technical requirements as guided by its design and development, 
+and meets the user requirements effectively and efficiently by handling all the exceptional and boundary cases. 
+
+1. Identifying Defects: Testing helps identify defects or bugs in the software early in the development process, making it easier and less costly to fix them.
+2. Ensuring Quality: Testing helps ensure the quality of the software by verifying that it meets the specified requirements and functions correctly.
+3. Improving Reliability: Testing helps improve the reliability and stability of the software by uncovering and addressing potential issues before they impact users.
+4. Building Confidence: Testing helps build confidence in the software among stakeholders, including customers, by demonstrating that it has been thoroughly evaluated and meets their expectations.
+
+Question: What is Unit Testing? 
+Answer: Unit Testing: Testing individual units or components of the software in isolation to ensure they function correctly. 
+Unit tests are typically automated and focus on small, specific pieces of code.
+
+Question: What are benefits of Unit testing?
+Answer: 
+1. Early Detection of Defects: Unit tests allow developers to identify defects in individual units or components of the software early in the development process. 
+2. Improved Code Quality: Writing unit tests often requires developers to design code that is modular, loosely coupled, and well-structured.
+3. Faster Feedback Loop: Unit tests can be automated and executed frequently, providing rapid feedback to developers about the correctness of their code.
+4. Documentation: Unit tests serve as executable documentation for the behavior of individual units or components of the software.
+5. Regression Testing: Unit tests serve as a form of regression testing, ensuring that changes made to the codebase do not inadvertently introduce new defects or break existing functionality. 
+By re-running unit tests after each code change, developers can catch regressions early and prevent them from causing larger problems later on.
+
+Question: What is AAA in Unit Testing
+Answer: The AAA stands for Arrange, Act, and Assert. This is a great way to make sure we’re covering all aspects of testing a module of code.
+
+Arrange the state of the data to set it up for testing.
+
+Act on the data through some method that performs an action.
+
+Assert that the result from acting on that data is what we expect it to be.
