@@ -1,0 +1,49 @@
+
+Question: What is API in Web Application? 
+Answer: An API (Application Programming Interface) is a set of rules, protocols, and tools that allows different software applications to communicate with each other. 
+APIs define the methods and data formats that applications can use to request and exchange information.
+In the case of web applications, an API is often used to enable interaction between the frontend (client-side) and backend (server-side) components of the application. 
+This can involve retrieving data from a server, sending data to a server for processing, or performing various other operations.
+
+Example: 
+Popular web APIs include the Google Maps API, Twitter API, and Facebook Graph API, which allow developers to incorporate mapping services, social media features, and other functionalities into their own applications.
+
+Question: What is the role of web server in Web application
+Answer: Role of web Server
+
+1. Handling HTTP Requests: When a client sends an HTTP request (such as requesting a web page or submitting a form), the web server receives the request and processes it according to the configured rules.
+2. Processing Requests: The web server processes the incoming requests by determining the appropriate action to take based on factors like the requested URL, HTTP method (GET, POST, etc.), and any associated data.
+3. Interacting with Application Logic: After receiving a request, the web server interacts with the application logic, which may include querying a database, executing business logic, or accessing other resources.
+4. Generating Responses: Once the application logic has been executed, the web server generates an HTTP response containing the appropriate content (such as HTML, JSON, or files) and sends it back to the client.
+5. Managing Connections: Web servers handle multiple concurrent connections from clients efficiently, ensuring that each request is processed in a timely manner and that resources are managed effectively.
+
+Question: What are the http verbs?
+Answer: These methods are used in requests sent by clients to servers. Some of the commonly used HTTP verbs include:
+
+GET: Requests data from a specified resource. This method should only retrieve data and should not modify any resources on the server.
+POST: Submits data to be processed to a specified resource. Typically used for creating new resources or submitting form data.
+PUT: Updates a specified resource with the provided data. It replaces the entire resource if it exists or creates a new resource if it doesn't.
+DELETE: Deletes the specified resource from the server.
+PATCH: Applies partial modifications to a resource. It is used to update part of a resource, rather than replacing it entirely like PUT.
+
+Question: Which http verbs are using in Web API?
+Answer: HTTP status codes are standardized responses that servers send to clients (such as web browsers or API consumers) to indicate the outcome of a request. 
+
+4XX - Client Error: These status codes indicate that the client has made an error in the request. They are often used to indicate issues such as invalid input, unauthorized access, or resource not found. Common 4XX status codes include:
+400 (Bad Request): The server cannot process the request due to a client error, such as malformed syntax.
+401 (Unauthorized): The request requires authentication, but the client has not provided valid credentials.
+403 (Forbidden): The server understood the request, but the client is not allowed to access the requested resource.
+404 (Not Found): The server cannot find the requested resource.
+
+5XX - Server Error: These status codes indicate that the server encountered an error while processing the request. They are often used to indicate issues such as server overload, internal server errors, or unavailability of server resources. Common 5XX status codes include:
+500 (Internal Server Error): The server encountered an unexpected condition that prevented it from fulfilling the request.
+502 (Bad Gateway): The server, while acting as a gateway or proxy, received an invalid response from an upstream server.
+503 (Service Unavailable): The server is currently unable to handle the request due to temporary overloading or maintenance of the server.
+504 (Gateway Timeout): The server, while acting as a gateway or proxy, did not receive a timely response from the upstream server.
+
+
+
+
+
+
+
