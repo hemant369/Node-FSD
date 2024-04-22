@@ -1,0 +1,37 @@
+Question: What is Relative Path,Absolute Path and Physical Path?
+Answer: Relative Path: A relative path specifies the location of a file or directory relative to the current working directory. 
+It doesn't start from the root directory of the file system but rather from some point within the file system hierarchy. 
+
+Absolute Path: An absolute path specifies the precise location of a file or directory within the file system hierarchy, starting from the root directory. 
+It provides the full path from the root directory to the file or directory.
+
+Physical Path: A physical path refers to the actual physical location of a file or directory on a storage device, such as a hard drive or SSD. 
+It's the path that directly corresponds to the physical layout of the storage media.
+
+Question: What is __filename and__dirnamein nodejs?
+Answer: __filename: This variable represents the absolute path of the currently executing script file. It provides the full path to the current script file, including the filename itself. 
+For example, if your script is located at /home/user/project/app.js, then __filename will contain the string /home/user/project/app.js.44
+
+__dirname: This variable represents the absolute path of the directory containing the currently executing script file. It provides the directory name without the filename. 
+For example, if your script is located at /home/user/project/app.js, then __dirname will contain the string /home/user/project.
+
+Question: Find details about following methods:
+Answer: 
+
+1. JSON.stringify(): is a method in JavaScript used to convert JavaScript objects or values to a JSON string.
+
+const obj = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+const jsonString = JSON.stringify(obj);
+console.log(jsonString);
+
+2. JSON.parse(): is a method in JavaScript used to parse a JSON string and convert it into a JavaScript object or value.
+
+const jsonString = '{"name":"John","age":30,"city":"New York"}';
+
+const obj = JSON.parse(jsonString);
+console.log(obj);
