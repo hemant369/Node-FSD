@@ -1,0 +1,68 @@
+Question: How to add custom valiations using  custom() method.  Refer the above link.
+   	  Create a API method for Vehicle Registration and perform the following validations:
+		a.  Owner Name  :    Required 
+		b.  Contact Number  :   10 digit number   
+		c.   Vehicle Model :    Required  
+		d.   Registration Number  :    TS09EA1234  (sample format)
+		e.   Vehicle Color  :     Required 
+Answer:
+
+router.post("/Registration", [
+    body('Owner_name').exists().notEmpty(),
+    body('Vehicle_Model').exists().notEmpty(),
+    body('Vehicle_Color').exists().notEmpty(),
+    check('Registration_number').matches(/^TS\d{2}[A-Z]{2}\d{4}$/),
+    check('Contact_number').isLength({ min: 10, max: 10 }).custom((value,{req})=>{
+	
+	const contact_number = req.body.Contact_number
+	if(contact_number)
+	{}
+	else
+	{}
+});
+
+],
+async (req, res) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+        const extractedErrors = errors.array().map(err => ({ [err.param]: err.msg }));
+        return res.status(422).json({ errors: extractedErrors });
+    }
+
+});
+
+
+-----------------------------------For Case Study----------------------------
+Question: Check your project case study and find out what kind of validations can we add and write down the details?
+Answer:
+
+for User:
+
+1. user_id should not be empty
+2. email should follow correct pattern
+3. password must not be empty
+4. phone number length should be 10 digit
+5. address should not be empty
+
+for Category:
+
+1. Category_id should not be empty
+
+for Asset:
+
+1. manufacturing date: should follow pattern dd/mm/yyyy
+2. expiry date: should follow pattern dd/mm/yyyy
+3. price should not be empty
+4. Asset name should not be empty
+
+for Asset Request:
+
+1. id should not be empty
+2. Asset Description length must be grater than 10 digits
+
+for Asset Service Request:
+
+1. id should not be empty
+2. issue_type should not be empty
+3. issue_resolve_status should not be empty
