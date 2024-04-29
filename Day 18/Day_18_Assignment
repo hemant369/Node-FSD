@@ -1,0 +1,123 @@
+------------------------------------------------------------------- Assignment ----------------------------------------------
+Question: Implement the same example with database. 
+Answer: app.post("/Login", async function(req, res) {       
+    try {
+        // Retrieve the employee from the database based on the provided empname
+        // const employee = await Employee.findOne({ where: { empname: req.body.empname } });
+        const employee = await Employee.findOne({ where: { empid: req.body.empid } });
+
+        
+        // If no employee found or empid does not match, return error
+        if (!employee || req.body.empid !== employee.empid) {
+            return res.status(401).json({ success: false, message: "Invalid Employee Name or ID" });
+        }
+        
+        // Generate JWT token if empname and empid are correct
+        const userDataObj = { empname: employee.empname };
+        const JWTToken = jwt.sign(userDataObj, 'secret_key', { expiresIn: '1h' });
+        
+        return res.status(200).json({ success: true, token: JWTToken });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ success: false, message: "Internal Server Error" });
+    }
+});
+
+Question: How to encrypt and decrypt the content using bcrypt package
+Answer: 
+
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
+// Password to be hashed
+const password = 'myPassword';
+
+// Generate a salt and hash for the password
+bcrypt.hash(password, saltRounds, function(err, hash) {
+    if (err) {
+        // Handle error
+        console.error(err);
+    } else {
+        // Store the hash in the database
+        console.log('Hashed Password:', hash);
+    }
+});
+
+const hashFromDatabase = 'password obtain from database';
+
+// Compare the password with the hash
+bcrypt.compare(password, hashFromDatabase, function(err, result) {
+    if (err) {
+        // Handle error
+        console.error(err);
+    } else {
+        // Result is true if the password matches the hash
+        console.log('Password Match:', result);
+    }
+});
+
+------------------------------------------------------ Normal Practise ------------------------------------
+
+Question: What is CORS?
+Answer: Cross-Origin Resource Sharing (CORS) is a mechanism that supports secure requests and
+        data transfers from outside origins (domain, scheme, or port).
+
+CORS is a security mechanism that allows web servers to control which origins can access their resources. 
+It enables safe cross-origin requests while protecting against unauthorized access to sensitive data.
+
+For example, example.com uses a text font that’s hosted on fonts.com. 
+When visiting example.com, the user’s browser will make a request for the font from fonts.com. 
+Because fonts.com and example.com are two different origins, this is a cross-origin request. 
+If fonts.com allows cross-origin resource sharing to example.com, then the browser will proceed with loading the font. 
+Otherwise, the browser will cancel the request.
+
+Question: How to use cors middle ware in express?
+Answer: Install cors package: First, you need to install the cors package from npm if you haven't already done so. 
+	npm i cors
+
+Example: 
+	const cors = require('cors');
+	const corsOptions = {
+    		origin: 'http://example.com', // Allow requests from this origin
+    		methods: ['GET', 'POST'],     // Allow only specified HTTP methods
+   		allowedHeaders: ['Content-Type'], // Allow only specified headers
+	};
+	// Apply CORS globally to all routes
+	app.use(cors(corsOptions));
+
+Question: How to redirect from express application another website
+Answer: In Express, we can redirect requests to another website using the res.redirect() method. 
+This method sends a redirect response to the client, instructing it to make a new request to the specified URL.
+
+example: res.redirect('https://example.com');
+
+Question: What are the cookies? How to use cookies in express?
+Answer: Cookies are small piece of information i.e. sent from a website and stored in user's web browser when user browses that website. 
+Every time the user loads that website back, the browser sends that stored data back to website or server, to recognize user.
+
+example: res.cookie(name, value [, options])
+
+
+app.use('/', function (req, res, next) {
+    res.cookie('title', 'GeeksforGeeks');
+    res.send("Cookie Set");
+    next();
+})
+ 
+app.get('/', function (req, res) {
+    console.log('Cookie SET');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
