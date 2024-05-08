@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .table-container {
+            margin: 0 auto;
+            width: 45%;
+        }
+
+        .table {
+            align-content: center;
+            border-collapse: collapse;
+        }
+
+        .table th {
+            border: 1px solid skyblue;
+            background-color: skyblue;
+            color: white;
+            padding: 8px;
+            text-align: center;
+            white-space: nowrap; 
+        }
+
+        .table td {
+            border: 1px solid skyblue;
+            padding: 8px;
+            text-align: left;
+            width: 20%;
+            white-space: nowrap;
+        }
+        .table td:not(:first-child) {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 align="center">Top 10 Grossing Animated Films of All Times</h2>
+    <div class="table-container">
+        <table class="table">
+            <tr>
+                <th>Film Title</th>
+                <th>Released</th>
+                <th>Studio</th>
+                <th>Worldwide Gross</th>
+                <th>Domestic Gross</th>
+                <th>Foreign Gross</th>
+                <th>Budget</th>
+            </tr>
+            <tr>
+                <td>Frozen</td>
+                <td>2013</td>
+                <td>Disney</td>
+                <td>564</td>
+                <td>202</td>
+                <td>150</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>Incredibles 2</td>
+                <td>2018</td>
+                <td>Disney Pixar</td>
+                <td>564</td>
+                <td>202</td>
+                <td>150</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>Minions</td>
+                <td>2015</td>
+                <td>Universal</td>
+                <td>564</td>
+                <td>202</td>
+                <td>150</td>
+                <td>200</td>
+            </tr>
+
+        </table>
+    </div>
+
+</body>
+
+</html>
