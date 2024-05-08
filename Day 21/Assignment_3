@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .form-container {
+            border: 1px solid black;
+            width: 30%;
+            margin: 0 auto;
+        }
+
+        .form-header h3 {
+            padding: 8px;
+            margin-bottom: 2px;
+            margin-left: 15px;
+        }
+
+        .form-header h5 {
+            margin-top: 1px;
+            padding: 8px;
+            margin-left: 15px;
+        }
+
+        .form-header {
+            border: 1px solid black;
+            width: 30%;
+            margin: 0 auto;
+            background-color: rgb(231, 173, 131);
+        }
+
+        .form-content {
+            padding: 10px;
+            margin-left: 15px;
+        }
+
+        .form-content>div {
+            margin-bottom: 20px;
+            /* Add margin bottom to create space between each section */
+        }
+
+        .phone {
+            display: flex;
+        }
+
+        .phone input[type="text"] {
+            flex: 1;
+            /* Each input will take up equal space */
+            margin-right: 5px;
+            /* Add some space between inputs */
+            width: 20%;
+        }
+
+        .pizza-size {
+            display: flex;
+        }
+
+        .pizza-size input[type="radio"] {
+            vertical-align: middle;
+        }
+
+        .topping {
+            display: flex;
+        }
+
+        .topping input[type="checkbox"] {
+            vertical-align: middle;
+        }
+
+        .order {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .order button {
+            width: 30%;
+            padding: 12px;
+            color: white;
+            background-color: rgb(219, 107, 27);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .order button:hover {
+            background-color: rgb(185, 90, 23);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-header">
+        <h3>Welcome to Italian Pizza!</h3>
+        <h5>we deliver pizza in 40 minutes max. If not - Pizza on's us!</h5>
+    </div>
+    <div class="form-container">
+        <form action="/ordernow" method="post">
+            <div class="form-content">
+                <div>
+                    <label for="email">Email</label>
+                    <div>
+                        <input type="text" id="email" name="email" required>
+                    </div>
+                </div>
+                <div>
+                    <label>Phone</label>
+                    <div class="phone">
+                        <div>
+                            <input type="text" id="area" name="phone" placeholder="Area" required>
+                            <input type="text" id="local1" name="phone" placeholder="Local" required>
+                            <input type="text" id="local2" name="phone" placeholder="Local" required>
+                        </div>
+                    </div>
+                </div>
+                <label>Number of Slices</label>
+                <div>
+                    <input type="text" id="slice" name="slice" required>
+                </div>
+                <label>Pizza Size</label>
+                <div class="pizza-size">
+                    <div>
+                        <input type="radio" id="size8" name="size" value="8-inch" required>
+                        <label for="size8">8-inch</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="size10" name="size" value="10-inch">
+                        <label for="size10">10-inch</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="size12" name="size" value="12-inch">
+                        <label for="size12">12-inch</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="size14" name="size" value="14-inch">
+                        <label for="size14">14-inch</label>
+                    </div>
+                </div>
+                <label>Toppings</label>
+                <div class="topping">
+                    <div>
+                        <input type="checkbox" id="pepperoni" name="topping" value="pepperoni" required>
+                        <label for="pepperoni">Pepperoni</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="onions" name="topping" value="onions">
+                        <label for="onions">Onions</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="mushrooms" name="topping" value="mushrooms">
+                        <label for="mushrooms">Mushrooms</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="sausage" name="topping" value="sausage">
+                        <label for="sausage">Sausage</label>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" id="agree" name="agree" required>
+                    <label for="agree">I agree to the terms and conditions</label>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <div class="order">
+        <button type="submit">Order Now</button>
+    </div>
+</body>
+
+</html>
