@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .question {
+            color: red;
+        }
+
+        .answer {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 align="center" >Q&A Web Page</h1>
+    <div class="question">
+        <h3>Question 1: What is HTML?</h3>
+    </div>
+    <div class="answer">
+        <p>HTML stands for HyperText Markup Language. It is the standard markup language for creating web pages and web
+            applications.</p>
+    </div>
+
+    <div class="question">
+        <h3>Question 2: What is CSS?</h3>
+    </div>
+    <div class="answer">
+        <p>CSS stands for Cascading Style Sheets. It is a style sheet language used for describing the presentation of a
+            document written in HTML.</p>
+    </div>
+
+    <div class="question">
+        <h3>Question 3: What is JavaScript?</h3>
+    </div>
+    <div class="answer">
+        <p>JavaScript is a programming language that enables interactive web pages. It is used to add behavior and
+            interactivity to web pages.</p>
+    </div>
+
+    <div class="question">
+        <h3>Question 4: Find out diff. between get and post methods?</h3>
+    </div>
+    <div class="answer">
+        <p>GET: Typically used for requests that retrieve data from the server without modifying it.
+            It's suitable for requests where data transmission is relatively simple and where the data being sent is
+            small.<br/>
+            POST: Typically used for requests that modify data on the server, such as submitting form data, uploading
+            files, or performing actions that change the state of the server.<br/>
+            It's suitable for requests where data transmission can be more complex and where the data being sent may be
+            larger.</p>
+    </div>
+
+    <div class="question">
+        <h3>Question 5:Why do we use  tbody, tfoot, thead tags in html tables?</h3>
+    </div>
+    <div class="answer">
+        <p><tbody> (Table Body):
+            The <tbody> tag is used to group the body content of the table.
+            It typically contains one or more <tr> (table row) elements, which in turn contain <td> (table data/cell) or <th> (table header cell) elements.
+            While not strictly required, it's considered good practice to use <tbody> to group the main content of the table.
+            <tbody> elements allow for easier styling and scripting targeting specific sections of the table.
+            <tfoot> <br/>(Table Footer):
+            The <tfoot> tag is used to group the footer content of the table.
+            It contains one or more <tr> elements, similarly to <tbody>.
+            <tfoot> is commonly used to place summary rows or totals at the bottom of the table.
+            Placing content in <tfoot> allows it to be visually and semantically separated from the main body content of the table, making it easier for users to distinguish.
+            <thead><br/> (Table Header):
+            The <thead> tag is used to group the header content of the table.
+            It contains one or more <tr> elements, typically containing <th> elements to represent column headers.
+            <thead> is used to provide a semantic grouping for the header rows of the table.
+            Placing header content in <thead> allows it to be styled separately from the body content, making it easier to differentiate headers from data.</p>
+    </div>
+
+    <div class="question">
+        <h3>Question 6: What is the difference between margin and padding?</h3>
+    </div>
+    <div class="answer">
+        <p>To add a favicon to your website, either save your favicon image to the root directory of your webserver, or create a folder in the root directory called images, and save your favicon image in this folder.
+            A common name for a favicon image is "favicon.ico".
+            <br/>Next, add a &lt;link&gt; element to your "index.html" file, after the &lt;title&gt; element like this: 
+            &lt;link rel="icon" type="image/x-icon" href="/images/favicon.ico"&gt;
+            </p>
+            
+    </div>
+
+    <div class="question">
+        <h3>Question 7: What is a responsive web design?</h3>
+    </div>
+    <div class="answer">
+        <p>Responsive web design is an approach to web design that makes web pages render well on a variety of devices
+            and window or screen sizes.</p>
+    </div>
+
+    <div class="question">
+        <h3>Question 8: What is the purpose of the viewport meta tag?</h3>
+    </div>
+    <div class="answer">
+        <p>The viewport meta tag controls the layout and scaling of a web page on mobile browsers. It enables responsive
+            behavior by specifying the width of the viewport.</p>
+    </div>
+
+    <div class="question">
+        <h3>Question 9: What is the
+
+            <head> element used for in HTML?
+        </h3>
+    </div>
+    <div class="answer">
+        <p>The
+
+            <head> element in HTML contains meta-information about the document, such as its title, links to
+                stylesheets, scripts, and other meta tags.
+        </p>
+    </div>
+
+    <div class="question">
+        <h3>Question 10: What is a hyperlink?</h3>
+    </div>
+    <div class="answer">
+        <p>A hyperlink, commonly referred to as a link, is a reference to data that the reader can follow by clicking or
+            tapping. It is typically used to navigate between web pages or to different sections within the same page.
+        </p>
+    </div>
+
+</body>
+
+</html>
