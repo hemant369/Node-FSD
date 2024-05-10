@@ -1,0 +1,15 @@
+function CustomerDetails() {
+
+    let customerObj = { custname: "scott", custemail: "scott@gmail.com", custid: 123, custloc: "mumbai" };
+
+    return (
+        <div>
+            Customer name: {customerObj.custname} <br />
+            Customer email: {customerObj.custemail} <br />
+            Customer id: {customerObj.custid} <br />
+            Customer location: {customerObj.custloc} <br />
+        </div>
+    );
+}
+
+export default CustomerDetails;
