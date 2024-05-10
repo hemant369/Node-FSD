@@ -1,0 +1,16 @@
+function ImageArray() {
+
+    let imageArray = ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg"];
+
+    let resultsArray = imageArray.map((imageUrl) => (
+        <img src={imageUrl} alt="" style={{ width: '100px', height: '100px', margin: '10px' }} />
+    ));
+
+    return (
+        <div >
+            {resultsArray}
+        </div>
+    );
+}
+
+export default ImageArray;
