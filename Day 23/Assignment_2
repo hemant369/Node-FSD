@@ -1,0 +1,136 @@
+import { useState } from "react";
+
+
+function EmpArrayCrud() {
+    const [empArray, setEmpArray] = useState([]);
+
+    const [empno, setEmpno] = useState();
+    const [empname, setEmpname] = useState();
+    const [job, setJob] = useState();
+    const [sal, setSal] = useState();
+    const [deptno, setDeptno] = useState();
+
+    function getEmp() {
+
+        let tempArray = [
+            { empno: 11, empname: "Harry", job: "Finance", sal: 45000, deptno: 1 },
+            { empno: 12, empname: "Scott", job: "Marketing", sal: 35000, deptno: 2 },
+            { empno: 13, empname: "Daniel", job: "Health", sal: 55000, deptno: 3 },
+            { empno: 14, empname: "Jack", job: "Defence", sal: 65000, deptno: 4 }
+        ]
+
+        setEmpArray(tempArray);
+    }
+
+    function addEmp() {
+        let empObj = {};
+        empObj.empname = empname;
+        empObj.empno = empno;
+        empObj.job = job;
+        empObj.sal = sal;
+        empObj.deptno = deptno;
+
+        let tempArray = [...empArray];
+        tempArray.push(empObj);
+        setEmpArray(tempArray);
+
+        clearFields();
+    }
+
+    function deleteEmp(empno) {
+
+        let flag = window.confirm("Do you want to delete?");
+
+        if (flag == true) {
+            let tempArray = [...empArray];
+            let index = tempArray.findIndex(item => item.empno == empno);
+            tempArray.splice(index, 1);
+
+            setEmpArray(tempArray);
+        }
+        else {
+            return;
+        }
+    }
+
+    function selectEmp(empno) {
+        let empObj = empArray.find(item => item.empno == empno);
+
+        setEmpno(empObj.empno)
+        setEmpname(empObj.empname);
+        setJob(empObj.job);
+        setSal(empObj.sal);
+        setDeptno(empObj.deptno);
+    }
+
+    function updateEmp() {
+        let tempArray = [...empArray];
+
+        let index = tempArray.findIndex(item => item.empno == empno);
+        tempArray[index].empname = empname;
+        tempArray[index].job = job;
+        tempArray[index].sal = sal;
+        tempArray[index].deptno = deptno;
+
+        setEmpArray(tempArray);
+        clearFields();
+    }
+
+    function clearFields() {
+        setEmpno("");
+        setEmpname("");
+        setJob("");
+        setSal("");
+        setDeptno("");
+    }
+
+    let resultArray = empArray.map((item, index) => {
+        return <tr key={index}>
+            <td>   {item.empno}  </td>
+            <td>   {item.empname}  </td>
+            <td>   {item.job}  </td>
+            <td>   {item.sal}  </td>
+            <td>   {item.deptno}  </td>
+            <td>
+                <img src="/select.png" alt="Select" onClick={() => selectEmp(item.empno)} style={{ cursor: 'pointer', marginLeft: '5px', width: '45px', height: '45px' }} />
+                <img src="/delete.png" alt="Delete" onClick={() => deleteEmp(item.empno)} style={{ cursor: 'pointer', width: '45px', height: '45px' }} />
+            </td>
+        </tr>
+
+    })
+
+    return (
+        <>
+
+            <h3>Working with State -- CRUD Operations on Array of Objects</h3>
+            <hr />
+
+            <input type="text" placeholder="Employee Number" value={empno} onChange={(e) => setEmpno(e.target.value)} />
+            <input type="text" placeholder="Employee Name" value={empname} onChange={(e) => setEmpname(e.target.value)} />
+            <input type="text" placeholder="Employee Job" value={job} onChange={(e) => setJob(e.target.value)} />
+            <input type="text" placeholder="Employee Salary" value={sal} onChange={(e) => setSal(e.target.value)} />
+            <input type="text" placeholder="Employee Department" value={deptno} onChange={(e) => setDeptno(e.target.value)} />
+            <hr />
+
+            <input type="button" onClick={getEmp} value="Get Employee" />
+            <input type="button" onClick={addEmp} value="Add Employee" />
+            <input type="button" onClick={updateEmp} value="Update Employee" />
+            <hr />
+
+            <table border="2" width="800" cellspacing="0" cellpadding="5">
+                <tr>
+                    <th>Employee Number</th>
+                    <th>Employee Name</th>
+                    <th>Job</th>
+                    <th>Salary</th>
+                    <th>Department Number</th>
+                    <th>Info</th>
+                </tr>
+                {resultArray}
+            </table>
+
+        </>
+    );
+}
+
+export default EmpArrayCrud;
